@@ -32,32 +32,38 @@ def main():
 
         # Loop allows user to keep guessing until they get it right
         while (guess_loop):
-            u_num = int(input(Fore.WHITE + "Input your number below:\n"))
+            u_num = input(Fore.WHITE + "Input your number below:\n")
 
-            # Comparing user number with random number
-            if u_num == r_num:
-                print(
-                    Fore.GREEN + "Congratulations," +
-                    " you guessed the number correctly!!"
-                )
-                answer = (
-                    input(Fore.WHITE + "Would you like to play again? (y/n):")
-                    .strip()
-                    .lower()
-                )
+            try:
+                u_num = int(u_num)
 
-                # what to do with user answer
-                if answer == "y":
-                    print("Okay")
-                    break
+                # Comparing user number with random number
+                if u_num == r_num:
+                    print(
+                        Fore.GREEN + "Congratulations," +
+                        " you guessed the number correctly!!"
+                    )
+                    answer = (
+                        input(Fore.WHITE +
+                        "Would you like to play again? (y/n):")
+                        .strip()
+                        .lower()
+                    )
+
+                    # what to do with user answer
+                    if answer == "y":
+                        print("Okay")
+                        break
+                    else:
+                        print("Okay")
+                        # Ends program
+                        restart_loop = False
+                        guess_loop = False
                 else:
-                    print("Okay")
-                    # Ends program
-                    restart_loop = False
-                    guess_loop = False
+                    print(Fore.RED + "Uh oh, wrong answer. Guess again!")
 
-            else:
-                print(Fore.RED + "Uh oh, wrong answer. Guess again!")
+            except ValueError:
+                print(Fore.RED + Style.BRIGHT + "Invalid input, try again.")
 
 
 if __name__ == "__main__":
