@@ -20,18 +20,18 @@ def main():
     guess_loop = True
 
     # loop to run the game again if user responds yes
-    while (restart_loop):
+    while restart_loop:
         # Creating the random number
         r_num = random.randint(1, 15)
         print(
             Fore.WHITE
-            + "I just generated a random number " +
-            "between 1-15. Can you Guess it correctly?"
+            + "I just generated a random number " 
+            + "between 1-15. Can you Guess it correctly?"
         )
         print(r_num)
 
         # Loop allows user to keep guessing until they get it right
-        while (guess_loop):
+        while guess_loop:
             u_num = input(Fore.WHITE + "Input your number below:\n")
 
             try:
@@ -40,12 +40,12 @@ def main():
                 # Comparing user number with random number
                 if u_num == r_num:
                     print(
-                        Fore.GREEN + "Congratulations," +
-                        " you guessed the number correctly!!"
+                        Fore.GREEN + "Congratulations," 
+                        + " you guessed the number correctly!!"
                     )
                     answer = (
-                        input(Fore.WHITE +
-                        "Would you like to play again? (y/n):")
+                        input(Fore.WHITE 
+                        + "Would you like to play again? (y/n):")
                         .strip()
                         .lower()
                     )
