@@ -25,7 +25,7 @@ def main():
         r_num = random.randint(1, 15)
         print(
             Fore.WHITE
-            + "I just generated a random number " 
+            + "I just generated a random number "
             + "between 1-15. Can you Guess it correctly?"
         )
         print(r_num)
@@ -40,12 +40,12 @@ def main():
                 # Comparing user number with random number
                 if u_num == r_num:
                     print(
-                        Fore.GREEN + "Congratulations," 
+                        Fore.GREEN
+                        + "Congratulations,"
                         + " you guessed the number correctly!!"
                     )
                     answer = (
-                        input(Fore.WHITE 
-                        + "Would you like to play again? (y/n):")
+                        input(Fore.WHITE + "Would you like to play again? (y/n):")
                         .strip()
                         .lower()
                     )
